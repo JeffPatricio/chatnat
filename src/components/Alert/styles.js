@@ -1,12 +1,11 @@
 import styled from 'styled-components/native';
 import { StyleSheet } from 'react-native';
 
-export const Container = styled.View`
+export const Container = styled.TouchableHighlight`
   position: absolute;
   height: 106%;
   width: 110%;
-  background: #000;
-  opacity: 0.8;
+  background: rgba(0,0,0,0.8);
   z-index: 5;
   align-items: center;
   justify-content: center;
@@ -23,7 +22,7 @@ export const Title = styled.Text`
   font-size: 20px;
   font-weight: bold;
   color: #333;
-  margin: 10px 40px 30px 40px;
+  margin: 10px 40px 40px 40px;
 `;
 
 export const ContainerOptions = styled.View`
@@ -34,11 +33,16 @@ export const ContainerOptions = styled.View`
   justify-content: center;
 `;
 
-export const Option = styled.Text`
+export const Option = styled.TouchableOpacity`
+  margin: 12px;
+  align-self: stretch;
+  text-align: center;
+  align-items: center;
+  justify-content :center;
+`;
+
+export const OptionText = styled.Text`
   font-size: 14px;
   font-weight: bold;
   color: #333;
-  margin: 10px;
-  align-self: stretch;
-  text-align: center;
 `;
