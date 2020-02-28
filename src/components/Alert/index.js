@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React from 'react';
 import { Container, ContainerAlert, ContainerOptions, Title, Option, OptionText } from './styles';
 
 const ChoiseDeleteImage = ({ options, setVisible }) => {

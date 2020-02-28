@@ -3,7 +3,7 @@ import { RectButton } from 'react-native-gesture-handler';
 
 export const Keyboard = styled.KeyboardAvoidingView`
   flex: 1;
-  background: #5e35b1;
+  background: ${props => props.updating ? '#FFF' : '#5e35b1'};
   padding: 15px;
 `;
 
@@ -27,13 +27,14 @@ export const Title = styled.Text`
 
 export const ContainerImage = styled.View`
   align-items: center;
+  margin-top: ${props => props.updating ? '100px' : '0px'};
 `;
 
 export const ButtonEditImage = styled(RectButton)`
   position: absolute;
   justify-content: center;
   align-items: center;
-  background: #bbb;
+  background: ${ props => props.updating ? '#5e35b1' : '#bbb'};
   height: 34px;
   width: 34px;
   bottom: 0;
@@ -54,7 +55,7 @@ export const Input = styled.TextInput.attrs({ placeholderTextColor: '#999' })`
 export const ButtonSave = styled(RectButton)`
   justify-content: center;
   align-items: center;
-  background: #009688;
+  background: ${ props => props.updating ? '#5e35b1' : '#009688'};
   height: 35px;
   margin-top: 40px;
   margin-bottom: 10px;

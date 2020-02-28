@@ -7,7 +7,7 @@ import Loading from './components/Loading';
 
 const App = () => {
 
-  const [perfil, setPerfil] = useState('');
+  const [perfil, setPerfil] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,25 +16,24 @@ const App = () => {
         const perfil = await AsyncStorage.getItem('perfil');
         if (perfil) { await setPerfil(JSON.parse(perfil)) }
       } catch (error) {
-        setPerfil('')
+        setPerfil(null)
       } finally {
         setLoading(false)
       }
     })()
   }, [])
 
-
   return (
     <Fragment>
       <StatusBar barStyle='light-content' backgroundColor='#5e35b1' />
       {
-        (loading) && (<Loading size='40' color='#FFF' />)
+        (loading) && (<Loading size={50} color='#FFF' />)
       }
       {
-        (!loading && !perfil) && (<SignUp />)
+        (!loading && !perfil) && (<SignUp setPerfil={setPerfil} />)
       }
       {
-        (!loading && perfil) && (<Routes perfil={perfil} />)
+        (!loading && perfil) && (<Routes perfil={perfil} setPerfil={setPerfil} />)
       }
     </Fragment>
   )
