@@ -1,9 +1,14 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { StatusBar } from 'react-native';
+import { StatusBar, YellowBox } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Routes from './routes';
 import SignUp from './pages/SignUp';
 import Loading from './components/Loading';
+
+
+YellowBox.ignoreWarnings([
+  'Unrecognized WebSocket connection option(s) `agent`, `perMessageDeflate`, `pfx`, `key`, `passphrase`, `cert`, `ca`, `ciphers`, `rejectUnauthorized`. Did you mean to put these under `headers`?'
+])
 
 const App = () => {
 
